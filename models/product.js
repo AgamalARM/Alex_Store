@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema ;
 
-const productSellerSchema = new Schema({
+const productSchema = new Schema({
     product: {
         type: String,
         require: true
@@ -29,9 +29,13 @@ const productSellerSchema = new Schema({
     merchant: {
         type: String,
         require: true
+    },
+    addToCard: {
+        type: Boolean,
+        require: true
     }
 
 }, {timestamps: true});
 
-const Product = mongoose.model('Product', productSellerSchema);
+const Product = mongoose.model('Product', productSchema);
 module.exports = Product ;
